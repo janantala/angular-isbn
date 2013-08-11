@@ -7,9 +7,7 @@
 isbnApp.controller('mainCtrl', function mainCtrl($scope) {
   
   $scope.addISBN = function() {
-    console.log('submit');
-    console.log($scope.addISBNForm);
-    console.log($scope.addISBNForm.$valid);
+    alert($scope.ISBNForm.$valid ? 'valid' : 'invalid');
   };
 });
 
