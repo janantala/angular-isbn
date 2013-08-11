@@ -9,6 +9,7 @@
 
   var isbn = angular.module('ja.isbn', []);
 
+  var ALLOWEDCHARS = /^[ -]*$/;
   var ISBN10WEIGHTS = [10,9,8,7,6,5,4,3,2,1];
   var ISBN13WEIGHTS = [1,3,1,3,1,3,1,3,1,3,1,3,1];
 
@@ -23,8 +24,8 @@
       }, 0);
   };
 
-  console.log(checksum('8020401059'.split(''), ISBN10WEIGHTS) % 11 === 0);
-  console.log(checksum('9788072038848'.split(''), ISBN13WEIGHTS) % 10 === 0);
+  // console.log(checksum('8020401059'.split(''), ISBN10WEIGHTS) % 11 === 0);
+  // console.log(checksum('9788072038848'.split(''), ISBN13WEIGHTS) % 10 === 0);
 
   isbn.directive('isbn10', function () {
     return {
@@ -38,16 +39,14 @@
           }
 
           var str = value.replace(/\d/g, '');
-          var allowedCharacters = /^[ -]*$/;
 
-          if (! allowedCharacters.test(str)) {
+          if (! ALLOWEDCHARS.test(str)) {
             ctrl.$setValidity('isbn10', false);
             return undefined;
           }
 
           var isbn = value.replace(/\D/g, '');
-          console.log(isbn);
-          if (isbn && isbn.length === 10) {
+          if (isbn && isbn.length === 10 && checksum(isbn.split(''), ISBN10WEIGHTS) % 11 === 0) {
             // it is valid
             ctrl.$setValidity('isbn10', true);
             return value;
@@ -74,16 +73,14 @@
           }
 
           var str = value.replace(/\d/g, '');
-          var allowedCharacters = /^[ -]*$/;
 
-          if (! allowedCharacters.test(str)) {
+          if (! ALLOWEDCHARS.test(str)) {
             ctrl.$setValidity('isbn13', false);
             return undefined;
           }
 
           var isbn = value.replace(/\D/g, '');
-          console.log(isbn);
-          if (isbn && isbn.length === 13) {
+          if (isbn && isbn.length === 13 && checksum(isbn.split(''), ISBN13WEIGHTS) % 10 === 0) {
             // it is valid
             ctrl.$setValidity('isbn13', true);
             return value;
