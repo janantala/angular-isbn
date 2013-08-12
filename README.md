@@ -1,4 +1,3 @@
-angular-isbn
-============
+# angular-isbn v0.1.0
 
-ISBN number validator for AngularJS
+ISBN number validation for AngularJS
