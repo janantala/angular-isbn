@@ -38,13 +38,13 @@ Add the **ja.isbn** module as a dependency to your application module:
 
 ### ISBN-10
 
-Add isbn10 attribute into your input element.
+Add **isbn10** attribute into your input element.
 
     <input type="text" ng-model="isbn.isbn10" name="isbn10" isbn10 placeholder="1-4493-4485-2" />
 
 ### ISBN-13
 
-Add isbn13 attribute into your input element.
+Add **isbn13** attribute into your input element.
 
     <input type="text" ng-model="isbn.isbn13" name="isbn13" isbn13 placeholder="978-1-4493-4485-6" />
 
@@ -57,7 +57,7 @@ We use karma and jshint to ensure the quality of the code. The easiest way to ru
     bower install
     grunt
 
-The karma task will try to open Chrome as a browser in which to run the tests. Make sure this is available or change the configuration in `test/test.config.js` 
+The karma task will try to open Chrome as a browser in which to run the tests. Make sure this is available or change the configuration in `test/test.conf.js` 
 
 # Contributing
 
