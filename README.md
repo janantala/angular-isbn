@@ -2,6 +2,10 @@
 
 ISBN number validation for AngularJS
 
+### Demo
+
+Check out http://janantala.github.io/angular-isbn/demo/
+
 # Testing
 
 We use karma and jshint to ensure the quality of the code. The easiest way to run these checks is to use grunt:
