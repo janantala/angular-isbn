@@ -1,0 +1,24 @@
+{
+  "name": "angular-isbn",
+  "version": "0.1.0",
+  "description": "AngularJS ISBN validation.",
+  "author": "https://github.com/janantala/angular-isbn/graphs/contributors",
+  "license": "MIT",
+  "homepage": "https://github.com/janantala/angular-isbn",
+  "main": "./src/angular-isbn.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "test*",
+    "demo*",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": "~1.x"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.x"
+  }
+}
