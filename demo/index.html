@@ -7,31 +7,20 @@
 <title>AngularJS • isbn</title>
 <style>
   [ng-cloak] { display: none; }
-  html, body { padding: 0; margin: 0; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, Verdana, sans-serif; }
+  html, body { padding: 0; margin: 0; font-family: Helvetica, Arial, Verdana, sans-serif; }
   * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-  }
-  header {
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    background: black;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-  }
-
-  header.started {
-    background: #5da423;
   }
 
   .content {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    padding-top: 50px;
+    margin-top: 50px;
+    padding: 10px;
+    background: rgb(240,240,240);
   }
 
   .center {
@@ -39,7 +28,8 @@
   }
 
   .form-section {
-    margin-top: 25px;
+    max-width: 250px;
+    margin: 25px auto;
   }
 
   input[type=text] {
@@ -48,7 +38,7 @@
     -ms-transition: all 0.30s ease-in-out;
     -o-transition: all 0.30s ease-in-out;
     outline: none;
-    width: 150px;
+    width: 100%;
     padding: 3px 0px 3px 3px;
     border: 1px solid #DDDDDD;
   }
@@ -92,20 +82,24 @@
         
         <p>AngularJS ISBN validation demo.</p>
         <p>Check out validation <a href="http://en.wikipedia.org/wiki/International_Standard_Book_Number">rules</a>.</p>
-        <p>Supported formats:</p>
+        
+        <h5>Supported formats:</h5>
         <ul>
           <li>number: 1449344852</li>
           <li>dashed: 1-4493-4485-2</li>
           <li>spaced: 1 4493 4485 2</li>
         </ul>
         
+        <h5>Try it:</h5>
         <section class="form-section">
           <form ng-submit="addISBN()" name="ISBNForm" novalidate>
             <p>
               <label>
-                ISBN-10
-                <input type="text" ng-model="isbn.isbn10" name="isbn10" isbn10 placeholder="1-4493-4485-2" />
+                ISBN-10:
               </label>
+            </p>
+            <p>  
+              <input type="text" ng-model="isbn.isbn10" name="isbn10" isbn10 placeholder="1-4493-4485-2" />
             </p>
             <p>
               <small class="validation-error" ng-hide="ISBNForm.isbn10.$valid">ISBN-10 is invalid. Try 1-4493-4485-2</small>
@@ -113,9 +107,11 @@
             
             <p>
               <label>
-                ISBN-13
-                <input type="text" ng-model="isbn.isbn13" name="isbn13" isbn13 placeholder="978-1-4493-4485-6" />
+                ISBN-13:
               </label>
+            </p>
+            <p>  
+              <input type="text" ng-model="isbn.isbn13" name="isbn13" isbn13 placeholder="978-1-4493-4485-6" />
             </p>
             <p>
               <small class="validation-error" ng-hide="ISBNForm.isbn13.$valid">ISBN-13 is invalid. Try 978-1-4493-4485-6</small>
@@ -126,8 +122,9 @@
           </form>
         </section>
 
-        <h5 class="center">Credits:</h5>
-        <p class="center"><a href="http://twitter.com/janantala">Jan Antala</a></p>
+        <h5>Credits:</h5>
+        <p>The MIT License</p>
+        <p>Copyright (c) 2013 <a href="http://twitter.com/janantala">Jan Antala</a></p>
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
